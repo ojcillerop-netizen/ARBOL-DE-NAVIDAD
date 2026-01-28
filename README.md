@@ -1,27 +1,6 @@
-# ARBOL-DE-NAVIDAD
-Diseño de un arbol de navidad, mediante un sensor de movimiento activaremos unas luces led y sonara el conocido villancinco "Jingle Bells" durante quince segundos.
-# 🎄 Árbol de Navidad Interactivo con ESP32
-
-Este proyecto consiste en un árbol navideño inteligente que utiliza un sensor de movimiento para activar una secuencia de luces y música.
-
-## 🚀 Funcionalidades
-* **Detección de presencia:** Activación automática mediante sensor PIR HC-SR501.
-* **Música dinámica:** Reproducción de *Jingle Bells* durante 15 segundos.
-* **Espectáculo de luces:** 6 LEDs sincronizados que parpadean al ritmo de la música.
-* **Cerebro:** Basado en el potente microcontrolador **ESP32-WROOM-32D**.
-
-## 🛠️ Componentes
-* ESP32 DevKit V1 / NodeMCU-32S
-* Sensor PIR HC-SR501
-* 6 LEDs (Rojos y Verdes) + Resistencias 330Ω
-* Buzzer Pasivo
-* Carcasa diseñada e impresa en 3D
-
-## 🔧 Configuración y Montaje
-1. Conectar los componentes según el diagrama de pines (ver código).
-2. Instalar el soporte de ESP32 en el IDE de Arduino.
-3. Cargar el código proporcionado en la carpeta `/src`.
-4. Calibrar la sensibilidad del sensor PIR mediante los potenciómetros físicos.
-
-## 📜 Licencia
-Este proyecto es de código abierto bajo la licencia MIT.
+🎄 Árbol de Navidad Inteligente Interactiva con ESP32Este proyecto implementa un sistema de decoración navideña inteligente que cobra vida automáticamente. Utiliza un microcontrolador ESP32 y un sensor de movimiento PIR para detectar la presencia de personas, activando instantáneamente un espectáculo de 6 LEDs sincronizados y la melodía clásica de Jingle Bells.Es un proyecto educativo integral para aprender sobre:Control de periféricos múltiples: Gestión de 6 salidas digitales (LEDs) y una salida PWM (Buzzer).Sensores de presencia: Uso y calibración del sensor infrarrojo pasivo (PIR).Programación con tiempo no bloqueante: Uso de millis() para controlar la duración exacta de 15 segundos.Generación de tonos: Creación de melodías mediante frecuencias y duraciones.✨ Características PrincipalesDetección automática: Activación por movimiento en un rango de hasta 7 metros.Espectáculo Visual: 6 LEDs que realizan destellos aleatorios simulando luces de feria.Audio Festivo: Melodía de Jingle Bells optimizada para buzzer pasivo.Temporización Precisa: El sistema se mantiene activo durante 15 segundos exactos por cada detección.Eficiencia Energética: El sistema permanece en reposo absoluto hasta que detecta presencia.🛠️ Hardware NecesarioComponenteEspecificaciónCantidadMicrocontroladorESP32-WROOM-32D (DevKit V1)1Sensor de MovimientoPIR HC-SR5011BuzzerPasivo (Piezoeléctrico)1LEDsRojos / Verdes (5mm)6Resistencias330Ω (para los LEDs)6Protoboard400 o 830 puntos1CablesJumpers DuPont (M-M / M-H)VariosCarcasaDiseño 3D personalizado1🔌 Diagrama de ConexionesESP32 DevKit Pinout:Sensor PIR: VCC → VIN (5V) | OUT → GPIO 13 | GND → GNDBuzzer: (+) → GPIO 12 | (-) → GNDLEDs (1-6): Ánodos (+) a GPIOs 14, 27, 26, 25, 33, 32 (cada uno con su resistencia de 330Ω).💻 Software e InstalaciónEntorno de desarrollo: Instala Arduino IDE o VS Code + PlatformIO.Configuración ESP32: Agrega la URL de placas ESP32 en preferencias y descarga el paquete esp32 de Espressif.Carga del Código:Abre el archivo Navidad_ESP32.ino.Selecciona la placa "ESP32 Dev Module".Conecta tu placa y presiona Upload.⚙️ Configuración y CalibraciónAntes de ensamblar el árbol en su carcasa 3D, calibra el Sensor PIR:TIME: Gira el potenciómetro naranja de tiempo al mínimo (sentido antihorario). Esto permite que el ESP32 controle los 15 segundos por software.SENS: Ajusta la sensibilidad según el tamaño de la habitación donde colocarás el árbol.📂 Estructura del ProyectoPlaintextArbolNavidadESP32/
+├── ArbolNavidadESP32.ino   # Código fuente principal
+├── README.md               # Documentación del proyecto
+├── schematics/             # Diagramas de conexión
+└── 3D_Models/              # Archivos .STL para la carcasa del árbol
+🛠️ Troubleshooting (Solución de Problemas)El sensor se activa solo: El PIR es sensible a cambios de temperatura. Asegúrate de que los LEDs no estén demasiado cerca de la lente del sensor.El audio se escucha distorsionado: Verifica que el buzzer sea pasivo. Si es activo, solo emitirá un pitido constante.Los LEDs brillan poco: Asegúrate de estar usando resistencias de entre 220Ω y 330Ω. Si son mayores (como 10k), la luz será casi invisible.🚀 Próximas Mejoras (Ideas)Control Web: Añadir una interfaz WiFi para encender el árbol desde el móvil.Modo Nocturno: Agregar una fotorresistencia (LDR) para que solo funcione cuando las luces de la casa estén apagadas.Efectos Neopixel: Sustituir los 6 LEDs por una tira LED direccionable para efectos de colores infinitos.
